@@ -143,7 +143,7 @@ var calculateHash = (index, previousHash, timestamp, data, nonce) => {
     var hash = CryptoJS.SHA256(index + previousHash + timestamp + data + nonce).toString();
     var binaryHash = '';
     for(var i = 0; i < hash.length; i++) {
-        binaryHash += parseInt(hash[i], 16).toString(8).padStart(4, '0');
+        binaryHash += parseInt(hash[i], 16).toString(2).padStart(4, '0');
     }
     return binaryHash;
 };
